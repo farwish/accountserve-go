@@ -5,6 +5,6 @@ import (
 	"github.com/gopher-lego/response"
 )
 
-func Pong(c *gin.Context) {
+func HeartBeatPong(c *gin.Context) {
 	response.Success(c, "pong")
 }

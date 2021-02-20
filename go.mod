@@ -3,6 +3,7 @@ module github.com/gopher-lego/ginger
 go 1.13
 
 require (
+	github.com/appleboy/gin-jwt/v2 v2.6.4
 	github.com/coocood/freecache v1.1.1
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-ego/gse v0.65.1

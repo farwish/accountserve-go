@@ -9,6 +9,7 @@ import (
 
 var corsMiddleware = middleware.CorsMiddleware()
 var limiterMiddleware = middleware.LimiterMiddleware()
+var mobilePasswordJwtMiddleware = middleware.MobilePasswordJwtMiddleware()
 
 func Set(e *gin.Engine) {
 	e.Use(corsMiddleware)
@@ -19,6 +20,12 @@ func Set(e *gin.Engine) {
 
 	heartbeat := top.Group("/ping")
 	{
-		heartbeat.GET("", http.Pong)
+		heartbeat.GET("", http.HeartBeatPong)
+	}
+
+	account := top.Group("/account")
+	{
+		account.POST("/login", mobilePasswordJwtMiddleware.LoginHandler)
+		// account.POST("/register", http.AccountRegister)
 	}
 }

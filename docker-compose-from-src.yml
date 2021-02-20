@@ -16,7 +16,7 @@ services:
     image: ginger:latest
     container_name: ginger-con
     ports:
-      - 8090:8090
+      - 8092:8090
     restart: on-failure
     networks:
       - default_net
